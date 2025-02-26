@@ -1,0 +1,1555 @@
+/*VARIABILES*/
+
+:root {
+    --main-color: #19c8fa;
+    --secondery-color: white;
+    --main-padding: 100px;
+    --box-color: rgb(15 116 143 / 70%);
+    --line-color: #777777;
+}
+
+
+/* GLOUBAL RULES*/
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    line-height: 1.15;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 90px;
+    margin-right: auto;
+}
+
+input,
+textarea {
+    border: 1px solid #ccc;
+}
+
+
+/* Small */
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+    .main-heading {
+        text-align: center;
+        margin-left: -110px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+    .main-heading {
+        margin-left: -220px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+    .main-heading {
+        text-align: center;
+        margin-left: 0px;
+    }
+}
+
+
+/*COMPONANTS*/
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 60%);
+    z-index: 1;
+}
+
+.main-heading {
+    text-align: center;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 40px;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.main-heading p {
+    line-height: 2;
+    color: var(--line-color);
+}
+
+
+/* AFTER*/
+
+header .container::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: #a2a2a2;
+    bottom: 0;
+    width: calc(100% - 30px);
+    left: 15px;
+}
+
+h2::after {
+    content: "";
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: var(--secondery-color);
+    border: 2px solid black;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.skills .precent li::after {
+    content: "";
+    position: absolute;
+    width: 480px;
+    height: 30px;
+    background-color: var(--main-color);
+}
+
+.skills .precent li div::after {
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-width: 7px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+    position: absolute;
+    top: 30px;
+    left: 14px;
+}
+
+.pricing .li-1 p::after {
+    content: "/Mo";
+    position: absolute;
+    font-size: 20px;
+    left: 160px;
+    top: 38px;
+}
+
+.design li::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f108";
+    font-weight: 900;
+    margin-right: 20px;
+    top: 1px;
+}
+
+h2::before {
+    content: "";
+    height: 2px;
+    width: 123px;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translatex(-50%);
+    background-color: black;
+}
+
+.skills .person .p1::before,
+.skills .person .p2::before {
+    content: "";
+    background-size: cover;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: -150px;
+}
+
+.skills .person .p1::before {
+    background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/skills-01.jpg);
+}
+
+.skills .person .p2::before {
+    background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/skills-02.jpg);
+}
+
+.pricing .li-1 p::before {
+    content: "$";
+    position: absolute;
+    font-weight: normal;
+    font-size: 25px;
+    top: -10px;
+    left: 35px;
+}
+
+
+/*HEADER */
+
+
+/* START MEDIA CONDITIONS */
+
+@media (min-width: 768px) {
+    header .container {
+        margin: 0px;
+    }
+    header .nav {
+        justify-content: center;
+    }
+    header .nav .toggle-menu {
+        visibility: hidden;
+        margin-right: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    header .container {
+        margin-left: 50px;
+    }
+    header .nav {
+        justify-content: flex-end;
+    }
+    header .nav .toggle-menu {
+        visibility: visible;
+    }
+    .landing .text {
+        left: 0px;
+    }
+}
+
+
+/* END MEDIA CONDITIONS */
+
+header .logo img {
+    height: 40px;
+}
+
+header .container .nav .form i {
+    color: white;
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}
+
+.form-i {
+    border-left: 1px solid var(--secondery-color);
+    width: 25px;
+    height: 30px;
+    z-index: 2;
+    margin-left: 30px
+}
+
+header .container .nav li a.active {
+    border-bottom: 2px solid var(--main-color);
+    color: var(--main-color);
+}
+
+header .container ul li a:hover {
+    color: var(--main-color);
+}
+
+header {
+    position: absolute;
+    z-index: 2;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 97px;
+}
+
+header .nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+header .container .nav ul {
+    display: flex;
+}
+
+header .nav .toggle-menu {
+    color: white;
+    font-size: 22px;
+}
+
+header nav .toggle-menu:hover+ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0px;
+    top: 100%;
+    width: 100%;
+    background-color: rgb(0 0 0 / 50%);
+}
+
+header nav ul li a {
+    padding: 15px !important;
+}
+
+header .container .nav li a {
+    text-decoration: none;
+    transition: 0.3s;
+    padding: 40px 10px;
+    display: block;
+    background-color: transparent;
+    font-size: 14px;
+    color: var(--secondery-color);
+    z-index: 2;
+}
+
+header .container li {
+    display: list-item;
+}
+
+
+/* LANDING */
+
+
+/* START MEDIA CONDITIONS */
+
+@media (min-width: 768px) {
+    .landing .text {
+        left: 20%;
+        padding: 27px;
+        top: 56%;
+    }
+    .landing .balls {
+        left: 43%;
+    }
+    .landing .fa-angle-right {
+        right: 240px;
+    }
+    .landing .fa-angle-left {
+        left: 155px;
+    }
+}
+
+@media (min-width: 992px) {
+    .landing .text {
+        left: 125px;
+        padding: 50px;
+        top: 50%;
+    }
+    .landing .balls {
+        left: 37%;
+    }
+    .landing .fa-angle-right {
+        right: 385px;
+    }
+    .landing .fa-angle-left {
+        left: 135px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .landing .text {
+        left: 0px;
+        padding: 50px;
+        top: 50%;
+    }
+    .landing .balls {
+        left: 50%;
+    }
+    .landing .fa-angle-right {
+        right: 30px;
+    }
+    .landing .fa-angle-left {
+        left: 30px;
+    }
+}
+
+
+/* END MEDIA CONDITIONS */
+
+.landing {
+    background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/landing.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+}
+
+.landing .text {
+    position: absolute;
+    transform: translateY(-50%);
+    width: 50%;
+    background-color: var(--box-color);
+    color: white;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.landing .text .content {
+    max-width: 500px;
+}
+
+.landing .text .content p {
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.landing .change-background {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ddd;
+    z-index: 2;
+}
+
+.landing .balls {
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.landing .balls span {
+    border-radius: 50%;
+    border: 1px solid var(--secondery-color);
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+}
+
+.landing span.active {
+    background-color: var(--main-color);
+    border: hidden;
+}
+
+
+/* SERVICES */
+
+
+/* START MEDIA CONDITIONS */
+
+@media (min-width: 768px) {
+    .services .container {
+        grid-template-columns: repeat(1, minmax(450px, 1fr));
+        margin-left: 25px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .services .container {
+        grid-template-columns: repeat( auto-fill, minmax(450px, 1fr));
+        margin-left: 150px;
+    }
+}
+
+
+/* END MEDIA CONDITIONS */
+
+.services {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.services .container {
+    display: grid;
+    grid-column-gap: 40px;
+    grid-row-gap: 60px;
+    margin-top: 80px;
+}
+
+.services .container span {
+    display: flex;
+}
+
+.services .container span i {
+    margin-right: 30px;
+}
+
+h3 {
+    margin-bottom: 30px;
+    color: var(--main-color);
+}
+
+.services span p {
+    line-height: 2;
+    color: #777;
+}
+
+
+/* DESIGN */
+
+
+/* START MEDIA CONDITIONS */
+
+@media (min-width: 768px) {
+    .design img {
+        visibility: hidden;
+    }
+    .design .text-box {
+        right: 29%;
+    }
+}
+
+@media (min-width: 768px) {
+    .design .text-box {
+        right: 38%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .design img {
+        visibility: visible;
+    }
+    .design .text-box {
+        right: 0px;
+    }
+}
+
+
+/* END MEDIA CONDITIONS */
+
+.design {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/design-features.jpg);
+    background-size: cover;
+    height: 600px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.design img {
+    position: absolute;
+    left: 130px;
+    bottom: -80px;
+    z-index: 2;
+    flex: 1;
+}
+
+.design .text-box {
+    justify-content: flex-start;
+    position: absolute;
+    padding: 50px;
+    width: 50%;
+    z-index: 2;
+    background-color: var(--box-color);
+    color: var(--secondery-color);
+}
+
+h4 {
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    margin-right: 20px;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.design ul li {
+    padding: 15px 0px;
+}
+
+
+/* PORTFOLIO */
+
+@media (min-width: 768px) {
+    .portfolio .imgs-container .box {
+        flex-basis: 50%;
+    }
+    .portfolio .imgs-container {
+        width: 745px;
+    }
+    .portfolio ul {
+        margin-left: -40px;
+    }
+}
+
+@media (min-width: 992px) {
+    .portfolio ul {
+        margin-left: -200px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .portfolio .imgs-container .box {
+        flex-basis: 25%;
+    }
+    .portfolio .imgs-container {
+        width: 100%;
+    }
+    .portfolio ul {
+        margin-left: 0px;
+    }
+}
+
+
+/* END MEDIA CONDITIONS */
+
+.portfolio {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.portfolio ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.portfolio ul li {
+    padding: 10px;
+}
+
+.portfolio li.active {
+    background-color: var(--main-color);
+    color: var(--secondery-color);
+}
+
+.portfolio .imgs-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.portfolio .imgs-container .box {
+    overflow: hidden;
+    position: relative;
+}
+
+.portfolio .imgs-container .box:hover .caption {
+    bottom: 0;
+}
+
+.portfolio .imgs-container .box:hover img {
+    transform: rotate(3deg) scale(1.1);
+}
+
+.portfolio .imgs-container .box img {
+    max-width: 100%;
+    transition: 0.3s;
+}
+
+.portfolio .imgs-container .box .caption {
+    position: absolute;
+    left: 0;
+    padding: 20px;
+    background-color: white;
+    width: 100%;
+    transition: 0.3s;
+    bottom: -100%;
+}
+
+.portfolio .imgs-container .box .caption h5 {
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.portfolio .imgs-container .box .caption p {
+    color: var(--main-color);
+}
+
+.portfolio .botton {
+    color: var(--secondery-color);
+    text-transform: uppercase;
+    background-color: var(--main-color);
+    padding: 20px;
+    margin-top: 50px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* VIDEO */
+
+
+/* START MEDIA CONDITIONS */
+
+@media (min-width: 768px) {
+    .video {
+        height: 500px;
+    }
+    .video-box {
+        left: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .video-box {
+        left: 39%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .video {
+        height: 800px;
+    }
+    .video-box {
+        left: 50%;
+    }
+}
+
+
+/* END MEDIA CONDITIONS */
+
+.video {
+    position: relative;
+}
+
+.video video {
+    width: 100%;
+}
+
+.video-box {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    background-color: var(--box-color);
+    z-index: 2;
+    text-align: center;
+    padding-top: 45px;
+    padding-bottom: 100px;
+}
+
+.video h4 {
+    font-weight: normal;
+    color: var(--secondery-color);
+    margin-bottom: 40px;
+    font-size: 25px;
+}
+
+.video p {
+    color: var(--secondery-color);
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.video .see-more {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    margin-top: 20px;
+    background-color: black;
+    color: var(--secondery-color);
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+
+/* ABOUT */
+
+
+/* START MEDIA CONDITIONS */
+
+@media (min-width: 768px) {
+    .about img {
+        left: 36%;
+    }
+    .about .about-img {
+        height: 550px;
+    }
+    .about .about-box {
+        width: 90%;
+        height: 85%;
+        left: 50px;
+        top: 40px;
+        margin-left: -15px;
+    }
+    ul .li-box {
+        width: 300px;
+        height: 180px;
+        display: flex;
+    }
+    .about ul {
+        flex-wrap: wrap;
+        margin-left: 90px;
+    }
+}
+
+@media (min-width: 992px) {
+    .about ul {
+        margin-left: 0px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .about img {
+        left: 50%;
+    }
+    .about .about-img {
+        height: 450px;
+    }
+    .about .about-box {
+        width: 85%;
+        height: 60%;
+        left: 50px;
+        top: 130px;
+        margin-left: 50px;
+    }
+    ul .li-box {
+        width: 840px;
+        height: 270px;
+    }
+    .about ul {
+        flex-wrap: nowrap;
+    }
+}
+
+
+/* END MEDIA CONDITIONS */
+
+.about {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    position: relative;
+}
+
+.about img {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 180px;
+}
+
+.about .about-img {
+    background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/stats.png);
+    background-size: cover;
+    position: relative;
+    top: 340px;
+    z-index: 2;
+}
+
+.about .about-box {
+    background-color: var(--box-color);
+    z-index: 2;
+    position: absolute;
+    text-align: center;
+}
+
+.about ul {
+    display: flex;
+    flex-basis: 25%;
+    z-index: 2;
+}
+
+.about li {
+    color: var(--secondery-color);
+    margin-right: 130px;
+    text-align: center;
+}
+
+.about .last-li {
+    margin-right: 0px;
+}
+
+.about h6 {
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+
+.about p {
+    font-size: 14px;
+}
+
+.about .i-shape {
+    background-color: black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about i {
+    z-index: 2;
+    color: var(--secondery-color);
+}
+
+.about .i-box {
+    display: flex;
+    justify-content: center;
+    margin-top: -60px;
+}
+
+
+/*SKILLS */
+
+
+/* START MEDIA CONDITIONS */
+
+@media (min-width: 768px) {
+    .skills .skills-head {
+        grid-template-columns: repeat(1, minmax(400px, 1fr));
+        left: -11%;
+    }
+    .skills .precent {
+        top: 0px;
+        left: 0px;
+    }
+}
+
+@media (min-width: 992px) {
+    .skills .precent {
+        left: 150px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .skills .skills-head {
+        grid-template-columns: repeat(2, minmax(400px, 1fr));
+        left: 20%;
+    }
+    .skills .precent {
+        top: -425px;
+        left: 530px;
+    }
+}
+
+
+/* END MEDIA CONDITIONS */
+
+.skills {
+    padding-top: var(--main-padding);
+    margin-top: 300px;
+    width: 992px;
+}
+
+.skills .skills-head {
+    display: grid;
+    grid-column-gap: 100px;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.skills .skills-head p {
+    line-height: 2;
+    color: var(--line-color);
+}
+
+.skills .skills-head h1 {
+    font-weight: normal;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.skills .costomer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 250px;
+}
+
+.skills .person p {
+    position: relative;
+    line-height: 2;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.skills hr {
+    width: 380px;
+    margin-top: 30px;
+}
+
+.skills .pers-name {
+    color: var(--line-color);
+    position: absolute;
+    left: 525px;
+    font-size: 14px;
+}
+
+.skills .costomer-balls {
+    display: flex;
+    position: relative;
+    left: 80px;
+    margin-top: 40px;
+}
+
+.skills .costomer-balls span {
+    left: 100px;
+    background-color: transparent;
+    border: 1px solid var(--line-color);
+    border-radius: 50%;
+    width: 13px;
+    height: 13px;
+    margin: 5px;
+}
+
+.skills .costomer-balls .active {
+    background-color: var(--main-color);
+    border: hidden;
+}
+
+.skills .precent {
+    width: 450px;
+    position: relative;
+    text-align: center;
+}
+
+.skills .precent ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 90%;
+    position: relative;
+}
+
+.skills .precent li h1 {
+    font-weight: normal;
+    font-size: 17px;
+    margin-bottom: 5px;
+    margin-left: 90px;
+}
+
+.skills .precent li {
+    margin-bottom: 60px;
+}
+
+.skills .precent .first-h1 {
+    margin-left: 70px;
+}
+
+.skills .precent .last-h1 {
+    margin-left: 30px;
+}
+
+.skills .precent li div {
+    width: 40px;
+    height: 30px;
+    background-color: black;
+    position: absolute;
+    border-radius: 11%;
+    text-align: center;
+}
+
+.skills .precent p {
+    z-index: 2;
+    color: var(--secondery-color);
+    margin-top: 5px;
+}
+
+.skills .value-1 {
+    top: 3px;
+    right: -244px;
+}
+
+.skills .value-2 {
+    top: 120px;
+    right: -225px;
+}
+
+.skills .value-3 {
+    top: 248px;
+    right: -185px;
+}
+
+.skills .value-4 {
+    bottom: 88px;
+    right: -242px;
+}
+
+.skills li+span {
+    background-color: #dedadc;
+    ;
+    height: 30px;
+    position: absolute;
+    z-index: 2;
+}
+
+.skills .precent-box1 {
+    top: 52px;
+    left: 630px;
+    width: 70px;
+}
+
+.skills .precent-box2 {
+    top: 173px;
+    left: 610px;
+    width: 90px;
+}
+
+.skills .precent-box3 {
+    top: 295px;
+    width: 130px;
+    left: 570px;
+}
+
+.skills .precent-box4 {
+    top: 417px;
+    left: 630px;
+    width: 70px;
+}
+
+
+/* PRICING */
+
+
+/* START MEDIA CONDITIONS */
+
+@media (min-width: 400px) {
+    .pricing .ul-container {
+        grid-template-columns: repeat(2, minmax(450px, 1fr));
+        margin-left: 0px;
+    }
+}
+
+@media (min-width: 768px) {
+    .pricing .qoute {
+        left: 60px;
+        width: 1000px;
+        margin-top: 0px;
+    }
+    .pricing .ul-container {
+        grid-template-columns: repeat(2, minmax(450px, 1fr));
+        margin-left: 0px;
+    }
+    .pricing ul {
+        margin-bottom: 50px;
+    }
+}
+
+@media (min-width: 992px) {
+    .pricing .qoute {
+        left: 145px;
+        width: 450px;
+        margin-top: -30px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .pricing .qoute {
+        left: 150px;
+        width: 1000px;
+        margin-top: 0px;
+    }
+    .pricing .ul-container {
+        grid-template-columns: repeat(4, minmax(250px, 1fr));
+        margin-left: 80px;
+    }
+    .pricing ul {
+        margin-bottom: 0px;
+    }
+}
+
+
+/* END MEDIA CONDITIONS */
+
+.pricing {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/quote.jpg);
+    background-size: cover;
+    height: 300px;
+    position: relative;
+}
+
+.pricing .qoute {
+    color: var(--secondery-color);
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    z-index: 2;
+    position: absolute;
+}
+
+q {
+    z-index: 2;
+}
+
+.pricing .qoute h1 {
+    font-size: 17px;
+    z-index: 2;
+    margin-top: 50px;
+}
+
+.pricing .main-heading {
+    margin-top: 300px;
+}
+
+.pricing .ul-container {
+    margin-top: 100px;
+    text-align: center;
+    display: grid;
+}
+
+.pricing li {
+    padding: 20px;
+}
+
+.pricing ul {
+    background-color: #fcfcfc;
+    width: 250px;
+}
+
+.pricing li h1 {
+    font-size: 20px;
+}
+
+.pricing li h1+p {
+    font-weight: bold;
+    font-size: 60px;
+    position: relative;
+}
+
+.pricing ul .li-1 {
+    border-top: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+    padding-bottom: 30px;
+}
+
+.pricing .li-3 a {
+    margin-left: 20px;
+    width: 100px;
+    height: 50px;
+    border: 1px solid var(--main-color);
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.pricing a:active {
+    color: red;
+}
+
+.pricing .first-span {
+    margin-top: -40px;
+}
+
+.pricing span {
+    border-bottom: 1px solid var(--main-color);
+    padding: 20px;
+}
+
+.pricing .last-span {
+    border-bottom: hidden;
+}
+
+.pricing .li-3 {
+    border-top: 1px solid var(--main-color);
+    padding-top: 70px;
+}
+
+.pricing .contact {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.pricing .contact .text-box {
+    align-content: center;
+    margin-left: 120px;
+}
+
+.pricing .contact .botton {
+    background-color: var(--main-color);
+    color: var(--secondery-color);
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+    margin-top: 20px;
+    margin-left: 110px;
+}
+
+.pricing .contact p {
+    font-size: 20px;
+}
+
+
+/* CONTACT */
+
+
+/* START MEDIA CONDITIONS */
+
+@media (min-width: 400px) {
+    .contact-us .info {
+        margin-left: 0px;
+    }
+}
+
+@media (min-width: 768px) {
+    .contact-us {
+        top: 1550px;
+    }
+    .contact-us .text-p {
+        top: 50px;
+        padding: 0px;
+    }
+    .contact-us .info .main-input,
+    .textarea {
+        width: 450px;
+    }
+    .contact-us .info .contact-send {
+        margin-left: 150px;
+    }
+    .contact-us .info {
+        margin-left: 0px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .contact-us {
+        top: 1200px;
+    }
+    .contact-us .text-p {
+        top: 95px;
+        padding: 10px;
+    }
+    .contact-us .info .main-input,
+    .textarea {
+        width: 800px;
+    }
+    .contact-us .info .contact-send {
+        margin-left: 320px;
+    }
+    .contact-us .info {
+        margin-left: 230px;
+    }
+}
+
+
+/* END MEDIA CONDITIONS */
+
+.contact-us {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/subscribe.jpg);
+    background-size: cover;
+    height: 265px;
+    position: relative;
+}
+
+.contact-us .form {
+    display: flex;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-us form i {
+    position: absolute;
+    top: 22px;
+    left: 15px;
+    color: var(--secondery-color);
+}
+
+.contact-us .form form {
+    top: 5px;
+    left: 85px;
+    position: absolute;
+}
+
+.contact-us form .contact-email {
+    color: var(--secondery-color);
+    background: none;
+    border: 1px solid var(--secondery-color);
+    width: 280px;
+    height: 60px;
+    border-right: none;
+    padding: 20px;
+    padding-left: 50px;
+    position: absolute;
+}
+
+.contact-us .form .contact-submit {
+    text-transform: uppercase;
+    color: var(--secondery-color);
+    background-color: var(--main-color);
+    border: 1px solid var(--secondery-color);
+    border-left: none;
+    width: 130px;
+    height: 60px;
+    position: absolute;
+    left: 280px;
+    font-size: 17px;
+}
+
+.contact-us .text-p {
+    color: var(--secondery-color);
+    position: absolute;
+    left: 580px;
+    line-height: 2;
+    z-index: 2;
+}
+
+.contact-us .main-heading {
+    margin-top: 250px;
+}
+
+.contact-us .info {
+    position: relative;
+    display: flex;
+}
+
+.contact-us .info form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+}
+
+.contact-us .info .main-input {
+    height: 65px;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+.contact-us .info .textarea {
+    height: 200px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.contact-us .contact-ul ul {
+    display: flex;
+    flex-direction: column;
+    margin-left: 70px;
+}
+
+.contact-us .contact-ul h1 {
+    font-size: 18px;
+}
+
+.contact-us .contact-ul {
+    line-height: 2;
+}
+
+.contact-us .contact-ul li {
+    margin-top: 80px;
+}
+
+.contact-us .contact-ul li p {
+    color: var(--line-color);
+}
+
+.contact-us .info .contact-send {
+    background-color: var(--main-color);
+    color: var(--secondery-color);
+    width: 180px;
+    padding: 20px;
+    margin-top: 70px;
+}
+
+
+/* END  */
+
+
+/* START MEDIA CONDITIONS */
+
+@media (min-width: 768px) {
+    .footer {
+        top: 420vh;
+    }
+    .end-logo {
+        margin-left: 100px;
+    }
+}
+
+@media (min-width: 992px) {
+    .footer {
+        top: 320vh;
+    }
+    .end-logo {
+        margin-left: -80px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .footer {
+        top: 320vh;
+    }
+    .end-logo {
+        margin-left: 0px;
+    }
+}
+
+
+/* END MEDIA CONDITIONS */
+
+.footer {
+    background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/subscribe.jpg);
+    background-size: cover;
+    height: 370px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.end-logo {
+    width: 350px;
+    z-index: 2;
+}
+
+.end-logo img {
+    margin: 50px;
+    margin-left: 60px;
+}
+
+.end-logo h1 {
+    font-size: 22px;
+    color: var(--secondery-color);
+    margin-left: 30px;
+    z-index: 2;
+}
+
+.end-logo hr {
+    width: 220px;
+}
+
+.end-logo .social-icons {
+    z-index: 2;
+    color: var(--secondery-color);
+}
+
+.end-logo i {
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.end-logo p {
+    margin-top: 50px;
+    color: var(--secondery-color);
+}
+
+.end-logo span {
+    color: var(--main-color);
+}
